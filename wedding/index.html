@@ -130,7 +130,7 @@
                     <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
                         <!-- <img class="img-fluid mb-4" src="img/event-1.jpg" alt=""> -->
                         <h4 class="mb-3">Tại Gia Đình Nhà Trai</h4>
-                        <p class="mb-0">Vào lúc <t class="text-primary" style="font-size: 20px">10h00 Chủ Nhật</t>, Ngày <t class="text-primary" style="font-size: 20px">05-02-2023</t></p>
+                        <p class="mb-0">Vào lúc <t id="time_hb" class="text-primary" style="font-size: 20px">10h00 Chủ Nhật</t>, Ngày <t class="text-primary" style="font-size: 20px">05-02-2023</t></p>
                         <p class="mb-2">(Tức ngày 15 tháng Giêng năm Quý Mão)</p>
                         <p class="mb-2 text-primary 11
                         1">Thôn Kim Đôi - Cẩm Hoàng - Cẩm Giàng - Hải Dương</p>
@@ -141,7 +141,7 @@
                     <div class="text-center text-md-left ml-md-3">
                         <!-- <img class="img-fluid mb-4" src="img/event-2.jpg" alt=""> -->
                         <h4 class="mb-3">Tại Gia Đình Nhà Gái</h4>
-                        <p class="mb-0">Vào lúc <t class="text-primary" style="font-size: 20px">17h00 Chủ Nhật</t>, Ngày <t class="text-primary" style="font-size: 20px">05-02-2023</t></p>
+                        <p class="mb-0">Vào lúc <t id="time_hg" class="text-primary" style="font-size: 20px">17h00 Chủ Nhật</t>, Ngày <t class="text-primary" style="font-size: 20px">05-02-2023</t></p>
                         <p class="mb-2">(Tức ngày 15 tháng Giêng năm Quý Mão)</p>
                         <p class="mb-2 text-primary">TDP Đông Tiến - Thị trấn Ngô Đồng - Giao Thủy - Nam Định</p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d2948.933008708056!2d106.4389551517311!3d20.285939648762376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d20.286687399999998!2d106.43886839999999!5e0!3m2!1sen!2s!4v1672240716340!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -289,11 +289,21 @@
             var url_string = window.location.href; 
             var url = new URL(url_string);
             var name = url.searchParams.get("name");
+            var hb = url.searchParams.get("hb");
+            var hg = url.searchParams.get("hg");
             if(!name){
                 name = "bạn và người thương";
             }
+            if(!hb){
+                hb = "10h00";
+            }
+            if(!hg){
+                hg = "17h00";
+            }
 
             $("#name_invite").html("Kính mời " + name);
+            $("#time_hb").html(hb + " Chủ Nhật");
+            $("#time_hg").html(hg + " Chủ Nhật");
         }
     </script>
 </body>
